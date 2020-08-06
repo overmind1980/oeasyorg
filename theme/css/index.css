@@ -1,0 +1,219 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+  CSs
+*/
+body {
+  color: #333;
+  min-height: 100vh;
+  background: #F0EDE3;
+  font-family: oxygen, sans-serif;
+}
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+/** 头部 **/
+.header {
+  padding-top: 42px;
+}
+.header > .navbar,
+.header > .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  padding: 16px 24px;
+  background: white;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+/** Logo **/
+.header > .navbar > .logo {
+  display: flex;
+  align-items: center;
+}
+.header > .navbar > .logo > img {
+  width: 64px;
+  height: 64px;
+}
+.header > .navbar > .logo > .web_title {
+  font-size: 24px;
+  margin-left: 16px;
+}
+/** Search **/
+.header > .navbar > .search > input {
+  outline: none;
+  height: 32px;
+  width: 240px;
+  padding: 0 12px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  border: 1px solid #888;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.header > .navbar > .search > button {
+  border: none;
+  height: 32px;
+  outline: none;
+  cursor: pointer;
+  padding: 0 16px;
+  background: #eee;
+  margin-left: 12px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+/** Menu **/
+.header > .menu {
+  margin-top: 24px;
+}
+.header > .menu > ul {
+  display: flex;
+}
+.header > .menu > ul > li > a {
+  color: #333;
+  padding: 8px 22px;
+  display: inline-block;
+}
+.header > .menu > ul > li > a:hover {
+  color: #66ccff;
+}
+
+/** Middle **/
+.middle {
+  display: flex;
+  margin-top: 48px;
+}
+.middle > .middle-left,
+.middle > .middle-right > .middle-card {
+  border-radius: 6px;
+  padding: 16px 24px;
+  background: white;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
+}
+/** Middle Left **/
+.middle > .middle-left {
+  flex: 1;
+  margin-right: 40px;
+}
+.middle > .middle-left > .showFrame {
+  width: 100%;
+  height: 550px;
+}
+/** Middle Right **/
+.middle > .middle-right {
+  width: 320px;
+}
+.middle > .middle-right > .middle-card {
+  margin-top: 24px;
+}
+.middle > .middle-right > .middle-card:nth-child(1) {
+  margin-top: 0;
+}
+.middle > .middle-right > .middle-card > .card-head {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 8px 0 8px;
+}
+.middle > .middle-right > .middle-card > .card-content {
+  margin-top: 16px;
+}
+.middle > .middle-right > .middle-card > .card-content > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.middle > .middle-right > .middle-card > .card-content > ul > li {
+  margin: 2px;
+}
+.middle > .middle-right > .middle-card > .card-content > ul a {
+  color: #333;
+  display: inline-block;
+  padding: 8px;
+}
+
+/** Footer **/
+.footer {
+  color: #827A5E;
+  margin-top: 3rem;
+  text-align: center;
+}
+.footer > p {
+  margin: 1rem 0;
+}
+.footer > p > a {
+  color: #66ccff;
+  margin: 0 6px;
+}
+
+/** 通用 **/
+.header > .menu > ul > li > a,
+.middle > .middle-right > .middle-card > .card-content > ul a {
+  transition: color .3s ease;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -ms-transition: color .3s ease;
+  -o-transition: color .3s ease;
+}
+.header > .menu > ul > li > a:hover,
+.middle > .middle-right > .middle-card > .card-content > ul a:hover {
+  color: #66ccff;
+}
