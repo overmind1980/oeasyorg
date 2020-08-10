@@ -28,21 +28,22 @@ html,body{
 }
 
 .subjectTitle{
-    float:left;
-    width:180px;
-    padding:10px;
-    border-top-left-radius:10px;
-    border-bottom-left-radius:10px; 
-    color:#FFF;
-    text-align:center;
+    float: left;
+    width: 180px;
+    line-height: 53px;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #FFF;
+    text-align: center;
 }
 
-.subjectLinks{
-    padding-top:10px;
-}
 .subjectLinks a{
-    font-size:16px;
-    margin:20px;
+    font-size: 16px;
+    margin: 0 20px;
+    line-height: 53px;
+    display: inline-block;
+    text-decoration: none;
 }
 .subjectLinks a::before{
     content: "ට";
