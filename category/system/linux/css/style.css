@@ -1,0 +1,12 @@
+html,body{
+    padding:0px;
+    margin:0px;
+    font-size:14px;
+}
+#leftbar{
+    float:left;
+    width:330px;
+    overflow:scroll;
+}
+#tutorialContent{
+}
