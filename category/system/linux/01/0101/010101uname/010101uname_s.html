@@ -5,9 +5,9 @@ enable_checker: true
 ---
 
 
-<h3> <ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby> 是什么？</h3>
+<h3>linux 是什么？</h3>
 
-咱们这次讲点什么呢？这次咱们讲讲这个 <b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>,什么是 <b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>呢？这<b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>呀,其实天天和咱们打交道.咱们打车订餐玩游戏不都得访问服务器么?这<b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>就是服务器的<b> <ruby>kernel<rp>(</rp><rt>内核</rt><rp>)</rp></ruby></b>。
+咱们这次讲点什么呢？这次咱们讲讲这个 <b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>,什么是 <b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>呢？这<b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>呀,其实天天和咱们打交道.咱们打车订餐玩游戏不都得访问服务器么?这<b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>就是服务器的<b> <ruby>内核<rp>(</rp><rt>kernel</rt><rp>)</rp></ruby></b>。
 
 咱平常所说的 <b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b>
 操作系统的全称是 GNU/linux.单独的 <b><ruby>linux<rp>(</rp><rt>[ˈlɪnəks]</rt><rp>)</rp></ruby></b> 一般指的并不是操作系统，而是操作系统的 <b><a href="https://baike.baidu.com/item/内核"><ruby>kernel<rp>(</rp><rt>内核</rt><rp>)</rp></ruby></a> </b>.linux内核和 GNU 的组件合在一起,才是操作系统。
@@ -128,10 +128,9 @@ uname -a
 
 
 ```checker
-- name: 请填写 checker 名称
+- name: 检查是否在命令历史中曾经出现过 uname
   script: |
-    history|grep uname;
+    cat /home/shiyanlou/.zsh_history | grep uname
   error: 您还没有使用过 uname 命令
   timeout: 2
 ```
-
