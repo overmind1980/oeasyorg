@@ -1,9 +1,47 @@
-
 function getHtmlDocName() {
     var str = window.location.href;
     str = str.substring(str.lastIndexOf("/") + 1);
-    str = str.substring(0, str.lastIndexOf("."));
+    str = str.substring(0,6);
     return str;
+}
+function initHeader(){
+    var myHeader = document.getElementById("myHeader");
+    var str = "[当前位置]<a href=\"http://oeasy.org\">oeasy主站<\/a> >";
+    let id = getHtmlDocName();
+    let currentIndex = getNodeNumber(id);
+    let parentIndex = getNodeNumber(dataList[currentIndex].parentId);
+    let grandParentIndex = getNodeNumber(dataList[parentIndex].parentId);
+    let url = window.location.href;
+    url = "http://oeasy.org/category/system/linux/";
+    let grandId = dataList[grandParentIndex].id;
+    url += grandId.substring(0,2)+"/";
+    url += grandId + "/" + grandId + ".html"
+    let name = dataList[grandParentIndex].name
+    str += "<a href=\""+url+"\">"+name+"<\/a> >";
+
+    let parentId = dataList[parentIndex].id;
+    url = "http://oeasy.org/category/system/linux/";
+    url += parentId.substring(0,2)+"/";
+    url += parentId.substring(0,4)+"/";
+    url += grandId + ".html";
+    name = dataList[parentIndex].name;
+    str += "<a href=\""+url+ "\">"+ name + "<\/a> >";
+    
+    name = dataList[currentIndex].name;
+    str += "<a href=\"+getHtmlDocName()+\">"+name+"<\/a>"
+
+    //str += dataList[currentIndex].name;
+    //str += dataList[parentIndex].name;
+
+    myHeader.innerHTML = str;
+}
+
+function getNodeNumber(id){
+    for(i=0;i<dataList.length;i++){
+        if(dataList[i].id==id){
+            return i;
+        }
+    }
 }
 window.onload=function(){
     initData();
@@ -14,17 +52,18 @@ window.onload=function(){
     var id = getHtmlDocName(); 
     var DivId = document.getElementById(id);
     document.getElementById("leftbar").scrollTop =DivId.offsetTop;
+    initHeader();
 }
 function initData(){
     window.dataList=[];
     dataList.push({id:'010000',name:'Oeasy教您玩转linux系列实验之01快速入手',parentId:""});//根
     dataList.push({id:'010100',name:'图形与终端0101',type:'folder',parentId:"010000"});//默认树
     dataList.push({id:'010101',name:'010101查看内核版本uname',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010102',name:'010102查看发行版lsb_release',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010103',name:'010103查看当前完整路径',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010102',name:'010102查看发行版distro',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010103',name:'010103查看当前位置pwd',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010104',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010105',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010106',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010105',name:'010105列表ls',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010106',name:'010106详细手册man',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010107',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010108',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010109',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
