@@ -1,3 +1,52 @@
+function closeSidebar(){
+    let leftBar = document.getElementById("leftbar");
+    let SidebarClose = document.getElementById("SidebarClose");
+    let content = document.getElementById("content");
+    if(leftBar.style.width=="32%"){
+        leftBar.style.width="16px";
+        SidebarClose.innerHTML="&gt;";
+        SidebarClose.style.left ="0";
+        content.style.width="95%";}
+    else{
+        leftBar.style.width="32%";
+        SidebarClose.innerHTML="&lt;";
+        SidebarClose.style.left ="30%";
+        content.style.width="65%";
+    
+
+    }
+}
+
+function initFooter(){
+
+    let id = getHtmlDocName();
+    let currentIndex = getNodeNumber(id);
+    let prevChapter = document.getElementById("prevChapter");
+    let prevIndex = currentIndex - 1;
+    let name = dataList[prevIndex].name;
+    name  = name.replace(/[^0-9a-zA-Z_]/g,"");
+    let url = "http://oeasy.org/category/system/linux/";
+    url += name.substring(0,2)+"/";
+    url += name.substring(0,4)+"/";
+    url += name+"/";
+    url +=  name + ".html";
+    
+    prevChapter.innerHTML="<a href=\""+url+"\">"  + "上一章" +name +"</a>";
+    let nextChapter = document.getElementById("nextChapter");
+    let nextIndex = currentIndex +1;
+    name = dataList[prevIndex].name;
+    name  = name.replace(/[^0-9a-zA-Z_]/g,"");
+    url = "http://oeasy.org/category/system/linux/";
+    url += name.substring(0,2)+"/";
+    url += name.substring(0,4)+"/";
+    url += name+"/";
+    url +=  name + ".html";
+    
+    nextChapter.innerHTML="<a href=\""+url+"\">"  + "下一章" +name +"</a>";
+
+
+}
+
 function getHtmlDocName() {
     var str = window.location.href;
     str = str.substring(str.lastIndexOf("/") + 1);
@@ -7,6 +56,7 @@ function getHtmlDocName() {
 function initHeader(){
     var myHeader = document.getElementById("myHeader");
     var str = "[当前位置]<a href=\"http://oeasy.org\">oeasy主站<\/a> >";
+
     let id = getHtmlDocName();
     let currentIndex = getNodeNumber(id);
     let parentIndex = getNodeNumber(dataList[currentIndex].parentId);
@@ -14,21 +64,25 @@ function initHeader(){
     let url = window.location.href;
     url = "http://oeasy.org/category/system/linux/";
     let grandId = dataList[grandParentIndex].id;
+    let name =dataList[grandParentIndex].name;
+    name  = name.replace(/[^0-9a-zA-Z_]/g,"");
     url += grandId.substring(0,2)+"/";
-    url += grandId + "/" + grandId + ".html"
-    let name = dataList[grandParentIndex].name
+    url += grandId.substring(0,4)+"/";
+    url +=  name + ".html";
+    name = dataList[grandParentIndex].name;
     str += "<a href=\""+url+"\">"+name+"<\/a> >";
 
     let parentId = dataList[parentIndex].id;
     url = "http://oeasy.org/category/system/linux/";
     url += parentId.substring(0,2)+"/";
     url += parentId.substring(0,4)+"/";
-    url += grandId + ".html";
+    name = dataList[parentIndex].name;
+    name  = name.replace(/[^0-9a-zA-Z_]/g,"");
+    url += name + ".html";
     name = dataList[parentIndex].name;
     str += "<a href=\""+url+ "\">"+ name + "<\/a> >";
-    
-    name = dataList[currentIndex].name;
-    str += "<a href=\"+getHtmlDocName()+\">"+name+"<\/a>"
+
+    str += "<a href=\""+window.location.href+"\">"+name+"<\/a>"
 
     //str += dataList[currentIndex].name;
     //str += dataList[parentIndex].name;
@@ -53,17 +107,18 @@ window.onload=function(){
     var DivId = document.getElementById(id);
     document.getElementById("leftbar").scrollTop =DivId.offsetTop;
     initHeader();
+    initFooter();
 }
 function initData(){
     window.dataList=[];
-    dataList.push({id:'010000',name:'Oeasy教您玩转linux系列实验之01快速入手',parentId:""});//根
-    dataList.push({id:'010100',name:'图形与终端0101',type:'folder',parentId:"010000"});//默认树
+    dataList.push({id:'010000',name:'010000快速入手start',parentId:""});//根
+    dataList.push({id:'010100',name:'010100图形与终端terminal',type:'folder',parentId:"010000"});//默认树
     dataList.push({id:'010101',name:'010101查看内核版本uname',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010102',name:'010102查看发行版distro',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010103',name:'010103查看当前位置pwd',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010104',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010105',name:'010105列表ls',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010106',name:'010106详细手册man',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010105',name:'010105详细手册man',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010106',name:'010106列表ls',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010107',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010108',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010109',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
@@ -110,7 +165,7 @@ function parseTreeNode(parentNode, parentId, dataList, click, dblclick, contextm
     }
 }
 function treeClick(node){
-    var url = "../../../";
+    var url = "http://oeasy.org/category/system/linux/";
     url = url+node.name.substring(0,2)+"/";
     url = url+node.name.substring(0,4)+"/";
     var name  = node.name.replace(/[^0-9a-zA-Z_]/g,"");

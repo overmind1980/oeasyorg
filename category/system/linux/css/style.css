@@ -7,7 +7,6 @@ html,body{
     float:left;
     width:32%;
     overflow:scroll;
-    position:fixed;
 }
 #content{
     width:65%;
@@ -110,4 +109,16 @@ header{
 header a{
     color:#fff;
     margin:0 10px;
+}
+#SidebarClose{
+    width:16px;
+    height:60px;
+    background:#ccc;
+    position:absolute;
+    top:300px;
+    left:30%;
+    vertical-align:middle;
+    padding-top:40px;
+    border:1px solid #333;
+    cursor:pointer;
 }
