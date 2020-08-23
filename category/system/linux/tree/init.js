@@ -12,8 +12,6 @@ function closeSidebar(){
         SidebarClose.innerHTML="&lt;";
         SidebarClose.style.left ="30%";
         content.style.width="65%";
-    
-
     }
 }
 
@@ -34,7 +32,7 @@ function initFooter(){
     prevChapter.innerHTML="<a href=\""+url+"\">"  + "上一章" +name +"</a>";
     let nextChapter = document.getElementById("nextChapter");
     let nextIndex = currentIndex +1;
-    name = dataList[prevIndex].name;
+    name = dataList[nextIndex].name;
     name  = name.replace(/[^0-9a-zA-Z_]/g,"");
     url = "http://oeasy.org/category/system/linux/";
     url += name.substring(0,2)+"/";
