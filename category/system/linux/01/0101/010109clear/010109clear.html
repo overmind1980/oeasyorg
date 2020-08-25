@@ -14,69 +14,60 @@
             <div id="simple-01-parent"></div>
         </span>
         <div id="content">
----
-show: step
-version: 1.0
-enable_checker: true
----
 
 
-# 清屏
 
-## 回忆上次内容😌
+<h3> 清屏</h3>
 
-####上次讲了灵魂三问✊
+<h4> 回忆上次内容😌</h4>
 
-- whatis
-- whereis
-- which
+<p>上次讲了灵魂三问✊</p>
+<ul>
+<li>whatis</li>
+<li>whereis</li>
+<li>which</li>
+</ul>
+<p>通过这三个问题,可以对命令基本了解,我们来试一下!!🤪</p>
 
-####通过这三个问题,可以对命令基本了解,我们来试一下!!🤪
+<h5> 清屏</h5>
 
-### 清屏
+<p>我们这次的命令clear很简单</p>
+<ul>
+<li>clear作用是清屏</li>
+<li>下面我对他提出灵魂三问</li>
+</ul>
 
-####我们这次的命令clear很简单
-
-- clear作用是清屏
-- 下面我对他提出灵魂三问
-
-
-```shell
-whatis clear
-whereis clear
-which clear
-```
-
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "which java"
-  error: 您还没有找到java的位置
-  timeout: 1
-```
-
-#### 这样我们就可以对clear有个基本了解,如果想更深入了解,可以查询手册.📕
+<code>
+whatis clear<br/>
+whereis clear<br/>
+which clear<br/>
+</code>
 
 
-### 特殊情况
 
-#### 有些文件问不出具体位置,比如
-
-- cd
-- pwd
-- 说他们是shell built-in command
-
-#### 这些命令在哪?🤔
-- 这些命令,是在这个shell里面的
-- shell启动的时候,就在内存中了
-- 所以叫shell built-in command
-- 没有具体的硬盘对应的命令文件
-- shell啥时候启动的?
-- 终端terminal启动时候,把硬盘上的shell代码(如zsh),加载到内存里
-- 如果要找相应的源代码,就去shell的源代码里面找
+<p> 这样我们就可以对clear有个基本了解,如果想更深入了解,可以查询手册.📕</p>
 
 
-#### 这次我们的命令clear非常简单,基本的命令操作我们就先到这里,下次我们总结一下前面内容,再见!👋<span id="prevChapter">
+<h5> 特殊情况</h5>
+
+<p> 有些文件问不出具体位置,比如</p>
+<ul>
+<li>cd</li>
+<li>pwd</li>
+<li>说他们是shell built-in command</li>
+</ul>
+<h6> 这些命令在哪?🤔</h6>
+<ul>
+<li>这些命令,是在这个shell里面的</li>
+<li>shell启动的时候,就在内存中了</li>
+<li>所以叫shell built-in command</li>
+<li>没有具体的硬盘对应的命令文件</li>
+<li>shell啥时候启动的?</li>
+<li>终端terminal启动时候,把硬盘上的shell代码(如zsh),加载到内存里</li>
+<li>如果要找相应的源代码,就去shell的源代码里面找</li>
+</ul>
+
+<p> 这次我们的命令clear非常简单,基本的命令操作我们就先到这里,下次我们总结一下前面内容,再见!👋</p><span id="prevChapter">
 </span>
 <a href="https://github.com/overmind1980/oeasy-linux-tutorial">参与制作</a>  <a href="http://oeasy.org/category/system/linux/shiyan.html">去做实验</a>
 <span id="nextChapter">

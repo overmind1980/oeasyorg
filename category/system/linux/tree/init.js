@@ -57,8 +57,9 @@ function initHeader(){
 
     let id = getHtmlDocName();
     let currentIndex = getNodeNumber(id);
+    let lastTwo = id.substring(4,2);
     let parentIndex = getNodeNumber(dataList[currentIndex].parentId);
-    let grandParentIndex = getNodeNumber(dataList[parentIndex].parentId);
+    if(lastTwo=="00"){
     let url = window.location.href;
     url = "http://oeasy.org/category/system/linux/";
     let grandId = dataList[grandParentIndex].id;
@@ -69,7 +70,7 @@ function initHeader(){
     url +=  name + ".html";
     name = dataList[grandParentIndex].name;
     str += "<a href=\""+url+"\">"+name+"<\/a> >";
-
+    }
     let parentId = dataList[parentIndex].id;
     url = "http://oeasy.org/category/system/linux/";
     url += parentId.substring(0,2)+"/";
@@ -80,6 +81,9 @@ function initHeader(){
     name = dataList[parentIndex].name;
     str += "<a href=\""+url+ "\">"+ name + "<\/a> >";
 
+    var str1 = window.location.href;
+    name = str1.substring(str1.lastIndexOf("/") + 1);
+    name = name.substring(0,name.length-5);
     str += "<a href=\""+window.location.href+"\">"+name+"<\/a>"
 
     //str += dataList[currentIndex].name;
@@ -117,23 +121,33 @@ function initData(){
     dataList.push({id:'010104',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010105',name:'010105详细手册man',type:'function',parentId:"010100"});//默认树
     dataList.push({id:'010106',name:'010106列表ls',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010107',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010108',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010109',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
-    dataList.push({id:'010110',name:'010104灵魂之问whatis',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010107',name:'010107那啥在哪whereis',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010108',name:'010108到底哪个which',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010109',name:'010109清屏clear',type:'function',parentId:"010100"});//默认树
+    dataList.push({id:'010110',name:'010110本章回顾summary',type:'function',parentId:"010100"});//默认树
 
     dataList.push({id:'010200',name:'终端应用实例0102',type:'folder',parentId:"010000"});//默认树
-    dataList.push({id:'010201',name:'010201查看内核版本uname',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010202',name:'010202查看发行版lsb_release',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010203',name:'010203查看当前完整路径',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010204',name:'010204灵魂之问whatis',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010205',name:'010205灵魂之问whatis',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010206',name:'010206灵魂之问whatis',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010207',name:'010207灵魂之问whatis',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010208',name:'010208灵魂之问whatis',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010209',name:'010209灵魂之问whatis',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010210',name:'010210灵魂之问whatis',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010211',name:'010211灵魂之问whatis',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010201',name:'010201持续输出yes',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010202',name:'010202软件包安装apt',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010203',name:'010203显示logo',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010204',name:'010204字符画figlet',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010205',name:'010205彩色字符画toilet',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010206',name:'010206小火车sl',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010207',name:'010207黑客帝国matrix',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010208',name:'010208晃眼特效bb',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010209',name:'010209装酷利器hollywood',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010210',name:'010210牛说cowsay',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010211',name:'010211管道pipe',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010212',name:'010212中文输入fcitx',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010213',name:'010213字符画转化asciiview',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010214',name:'010214随机谚语fortune',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010215',name:'010215随机诗词fortune-zh',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010300',name:'图形应用0103',type:'function',parentId:"010000"});//默认树
+    dataList.push({id:'010301',name:'010301桌面宠物pet',type:'function',parentId:"010300"});//默认树
+    dataList.push({id:'010302',name:'010302火狐firefox',type:'function',parentId:"010300"});//默认树
+    dataList.push({id:'010303',name:'010303文件管理器nautilus',type:'function',parentId:"010300"});//默认树
+    dataList.push({id:'010304',name:'010304图形界面xfce',type:'function',parentId:"010300"});//默认树
+    dataList.push({id:'010400',name:'010400大总结Summary',type:'function',parentId:"010000"});//默认树
 
 
 }

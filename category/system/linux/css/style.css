@@ -75,7 +75,11 @@ ul{
     border-radius: 10px;
     box-shadow: 8px 8px 4px #aaa;
     width:300px;
-    padding-left:30px;}
+    padding-left:30px;
+    border-top:3px solid #fff;
+    border-left:3px solid #fff;
+}
+
 
 
 h6{
@@ -91,7 +95,7 @@ h6{
     border-radius: 7px;
     text-shadow: 2px 2px 1px #046049;
     box-shadow:6px 6px 3px #aaa;
-    margin:0 0 23px;}
+    margin:30px 0 23px;}
 code{
     display:block;
     padding:15px;
@@ -121,4 +125,9 @@ header a{
     padding-top:40px;
     border:1px solid #333;
     cursor:pointer;
+}
+
+kbd{
+    border:1px solid black;
+    margin:0 10px;
 }

@@ -14,178 +14,148 @@
             <div id="simple-01-parent"></div>
         </span>
         <div id="content">
----
-show: step
-version: 1.0
-enable_checker: true
----
 
 
-# 详细手册
 
-## 回忆上节课😌
+<h3> 详细手册</h3>
 
-#### 我们上节课学习了使用命令来了解命令
+<h4> 回忆上节课😌</h4>
 
-- whatis
-- 我们通过他来发出灵魂之问
-- whatis到底是干什么的?🤔
+<p> 我们上节课学习了使用命令来了解命令</p>
+<ul>
+<li>whatis</li>
+<li>我们通过他来发出灵魂之问</li>
+<li>whatis到底是干什么的?🤔</li>
+</ul>
 
-
-```shell
+<code>
 whatis whatis
-```
+</code>
 
 
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "whatis whatis"
-  error: 您还没有对whatis发出灵魂之问
-  timeout: 1
-```
-
-####  但是,whatis只是简单介绍,有没有更详细的介绍呢?🤔
-
-##查看手册man
-
-#### 更详细的查询命令就是man😍
-#### man命令可以查看最详细的命令细节😍
 
 
-```shell
+<p>  但是,whatis只是简单介绍,有没有更详细的介绍呢?🤔</p>
+
+<h4>查看手册man</h4>
+
+<p> 更详细的查询命令就是man😍</p>
+<p> man命令可以查看最详细的命令细节😍</p>
+
+
+<code>
 man uname
-```
+</code>
 
 
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "man uname"
-  error: 您还没有查询uname的手册
-  timeout: 1
-```
-- man的意思是manual,就是查手册,就是查说明书
-- 想了解什么命令,就把他当作man的参数🥰
 
+<ul>
+<li>man的意思是manual,就是查手册,就是查说明书</li>
+<li>想了解什么命令,就把他当作man的参数🥰</li>
+</ul>
+</ul>
 
-![Image text](https://labfile.oss.aliyuncs.com/courses/2712/man_uname.png)
+<img src="https://labfile.oss.aliyuncs.com/courses/2712/man_uname.png" />
 
-- 用 <kbd>h</kbd> 来查看本说明书的帮助
-- 用 <kbd>q</kbd> 退出当前帮助
-- 用 <kbd>⬆️</kbd>向上
-- <kbd>⬇️</kbd> 向下
-- 用 <kbd>q</kbd> 退出当前说明书
+<ul>
+<li>用 <kbd>h</kbd> 来查看本说明书的帮助</li>
+<li>用 <kbd>q</kbd> 退出当前帮助</li>
+<li>用 <kbd>⬆️</kbd>向上</li>
+<li><kbd>⬇️</kbd> 向下</li>
+<li>用 <kbd>q</kbd> 退出当前说明书</li>
 
-### 用 <kbd>/</kbd>进行搜索
+</ul>
+<h5> 用 <kbd>/</kbd>进行搜索</h5>
 
-- 输入<kbd>/</kbd>
-- 在屏幕左下角出现/
-- 输入version
-- 我们可以看到和version相关的内容
+<ul>
+<li>输入<kbd>/</kbd></li>
+<li>在屏幕左下角出现/</li>
+<li>输入version</li>
+<li>我们可以看到和version相关的内容</li>
 
-![Image text](https://labfile.oss.aliyuncs.com/courses/2712/man_search.png)
+</ul>
+<img src="https://labfile.oss.aliyuncs.com/courses/2712/man_search.png" />
 
-#### 根据搜索的结果内容,可以查到添加--version选项查询版本号.
+<p> 根据搜索的结果内容,可以查到添加--version选项查询版本号.</p>
 
+<code>
 uname --version
-
-```shell
-uname --version
-```
+</code>
 
 
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "uname --version"
-  error: 您还没有查询uname命令的版本号
-  timeout: 1
-```
 
-### cat有什么细节
 
-```shell
+<h5> cat有什么细节</h5>
+
+<code>
 man cat
-```
+</code>
 
 
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "man cat"
-  error: 您还没有查询uname命令的版本号
-  timeout: 1
-```
 
-![Image text](https://labfile.oss.aliyuncs.com/courses/2712/man_cat.png)
 
-- 用 <kbd>⬆️</kbd>向上
-- <kbd>⬇️</kbd> 向下
-- 用 <kbd>ctrl</kbd>+<kbd>f</kbd>向下Foward一页
-- 用 <kbd>ctrl</kbd>+<kbd>b</kbd>向上Backward一页
-- 翻到最后,注意这个作者中的Stallman,我们以后还会遇到
-- 用<kbd>/</kbd> 搜索number 发现上图中的-n参数
+<img src="https://labfile.oss.aliyuncs.com/courses/2712/man_cat.png" />
 
-### cat -n
+<ul>
+<li>用 <kbd>⬆️</kbd>向上</li>
+<li><kbd>⬇️</kbd> 向下</li>
+<li>用 <kbd>ctrl</kbd>+<kbd>f</kbd>向下Foward一页</li>
+<li>用 <kbd>ctrl</kbd>+<kbd>b</kbd>向上Backward一页</li>
+<li>翻到最后,注意这个作者中的Stallman,我们以后还会遇到</li>
+<li>用<kbd>/</kbd> 搜索number 发现上图中的-n参数</li>
 
-```shell
+</ul>
+<h5> cat -n</h5>
+
+<code>
 cat -n /etc/*release
-```
+</code>
 
-#### 先回忆一下命令和参数😌
+<p> 先回忆一下命令和参数😌</p>
 
-![Image text](https://labfile.oss.aliyuncs.com/courses/2712/whatis.png)
+<img src="https://labfile.oss.aliyuncs.com/courses/2712/whatis.png" />
 
-####这次我们加上了选项
+<p>这次我们加上了选项</p>
 
-![Image text](https://labfile.oss.aliyuncs.com/courses/2712/com.png)
+<img src="https://labfile.oss.aliyuncs.com/courses/2712/com.png" />
 
-#### 命令的结构
-- 命令,决定到底是什么✊
-- 选项,像一些开关,控制命令的执行🎛
-- 参数,对谁执行命令💡
+<p> 命令的结构</p>
+<ul>
+<li>命令,决定到底是什么✊</li>
+<li>选项,像一些开关,控制命令的执行🎛</li>
+<li>参数,对谁执行命令💡</li>
 
-#### 我们这次的命令
-- 命令是cat,合并并输出内容
-- 选项是-n,打开输出行标记的开关
-- 参数是/etc目录下以release结尾的文件
+</ul>
+<p> 我们这次的命令</p>
+<ul>
+<li>命令是cat,合并并输出内容</li>
+<li>选项是-n,打开输出行标记的开关</li>
+<li>参数是/etc目录下以release结尾的文件</li>
 
-### man🔦
+</ul>
+<h5> man🔦</h5>
 
-####查询关于手册的手册
+<p>查询关于手册的手册</p>
 
-```shell
+<code>
 man man
-```
+</code>
 
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "man man"
-  error: 您还没有查询uname命令的版本号
-  timeout: 1
-```
 
-### ls
 
-#### 再来查查ls的手册
+<h5> ls</h5>
 
-```shell
+<p> 再来查查ls的手册</p>
+
+<code>
 man ls
-```
+</code>
 
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "man ls"
-  error: 您还没有查询uname命令的版本号
-  timeout: 1
-```
 
-- 感觉ls的手册好长🤗
-- 我们下次再说
-
+<ul>
+<li>感觉ls的手册好长🤗</li>
+<li>我们下次再说</li>
+</ul>
 
 
 <span id="prevChapter">

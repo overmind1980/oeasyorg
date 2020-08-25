@@ -14,103 +14,87 @@
             <div id="simple-01-parent"></div>
         </span>
         <div id="content">
----
-show: step
-version: 1.0
-enable_checker: true
----
 
 
-# 到底哪个which
 
-## 回忆上次内容😌
+<h3> 到底哪个which</h3>
 
-####我们上次讲了查找命令位置whereis
+<h4> 回忆上次内容😌</h4>
 
-####我想找到whereis的位置怎么办?🤔
+<p>我们上次讲了查找命令位置whereis</p>
 
-```shell
+<p>我想找到whereis的位置怎么办?🤔</p>
+
+<code>
 whereis whereis
-```
+</code>
+<ul>
+<li>命令有三种位置</li>
+<li>二进制代码binary</li>
+<li>源代码source</li>
+<li>帮助手册manual</li>
+</ul>
 
-- 命令有三种位置
-- 二进制代码binary
-- 源代码source
-- 帮助手册manual
+<p>我们找到了ls对应的源代码的位置,但是我们有的时候会面对这样的问题,一个命令有多条二进制代码和他对应.我们到使用的是哪个?🤔</p>
 
 
-####我们找到了ls对应的源代码的位置,但是我们有的时候会面对这样的问题,一个命令有多条二进制代码和他对应.我们到使用的是哪个?🤔
+<h5> 到底哪个?which🤔</h5>
 
+<p> 比如我们想知道我们使用的java在哪里?🙄</p>
 
-### 到底哪个?which🤔
-
-#### 比如我们想知道我们使用的java在哪里?🙄
-
-```shell
+<code>
 whereis java
-```
-#### 我只想查java的二进制文件
+</code>
+<p> 我只想查java的二进制文件</p>
 
-```shell
+<code>
 whereis -b java
-```
+</code>
 
-#### 也有好多,到底哪个?🤔
-#### 比如我们想知道我们使用的java在哪里?
+<p> 也有好多,到底哪个?🤔</p>
+<p> 比如我们想知道我们使用的java在哪里?</p>
 
-```shell
+<code>
 which java
-```
+</code>
 
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "which java"
-  error: 您还没有找到java的位置
-  timeout: 1
-```
 
-- 这样我们就得到了二进制里面的第一个,也就是我们执行命令时候对应硬盘的位置.
+<ul>
+<li>这样我们就得到了二进制里面的第一个,也就是我们执行命令时候对应硬盘的位置.</li>
+</ul>
+<h5> 我们来玩吧🤗</h5>
 
-### 我们来玩吧🤗
+<p> 各种命令都来当which的参数</p>
+<ul>
+<li>which pwd</li>
+<li>which uname</li>
+<li>which whatis</li>
+<li>which whereis</li>
+</ul>
+<p>现在我们有了三个灵魂之问了✊</p>
+<ul>
+<li>whatis 你是谁</li>
+<li>whereis 你在哪</li>
+<li>which 到底在哪</li>
+</ul>
+<p>通过这三个命令我们可以知道,任何命令的作用、位置,我们给这三个问号起名叫<b>灵魂三问 </b>!👊</p>
 
-#### 各种命令都来当which的参数
+<h5> 灵魂三问</h5>
+<p> 我们来对cat命令,试试这个灵魂三问</p>
 
-- which pwd
-- which uname
-- which whatis
-- which whereis
+<code>
+whatis cat<br/>
+whereis cat<br/>
+which cat<br/>
+</code>
 
-####现在我们有了三个灵魂之问了✊
 
-- whatis 你是谁
-- whereis 你在哪
-- which 到底在哪
-
-####通过这三个命令我们可以知道,任何命令的作用、位置,我们给这三个问号起名叫<b>灵魂三问 </b>!👊
-
-### 灵魂三问
-#### 我们来对cat命令,试试这个灵魂三问
-
-```shell
-whatis cat
-whereis cat
-which cat
-```
-
-```checker
-- name: 检查是否在命令历史中曾经出现过 uname
-  script: |
-    cat /home/shiyanlou/.zsh_history | grep "which cat"
-  error: 您还没有完成对cat的灵魂三问
-  timeout: 1
-```
-
-- 有了这三个命令
-- 我们就可以了解任何命令的基本信息了!
-- 我们再去问问什么命令呢?🤔
-- 下次再说!👋
-
+<ul>
+<li>有了这三个命令</li>
+<li>我们就可以了解任何命令的基本信息了!</li>
+<li>我们再去问问什么命令呢?🤔</li>
+<li>下次再说!👋</li>
+</ul>
 
 
 
