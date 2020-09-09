@@ -15,84 +15,57 @@
         </span>
         <div id="content">
 
-
-<h3> 本章回顾</h3>
-
-<h4> 我们来回顾一下😌</h4>
-
-<h6> 上一部分我们都讲了什么?🤔</h6>
+<div class="markdown-body" data-v-4e329b06=""><h1 id="本章回顾">本章回顾</h1>
+<h2 id="我们来回顾一下-😌">我们来回顾一下 😌</h2>
+<p><strong>上一部分我们都讲了什么？</strong>🤔</p>
 <ul>
-<li>蒸汽机车sl🚂</li>
-<li>变身小机车-l🚂</li>
-<li>变身飞天机车-F🚂</li>
-<li>让我们再开一次车🚂</li>
+<li>用 apt 查询并下载了 linuxlogo</li>
+<li>用字符画出了 linux 发行版的 logo</li>
+<li>还查了手册，通过改参数控制输出信息</li>
 </ul>
-
-
-<code>
-sl
-</code>
-
-
-<h6> 上次还想看看黑客帝国来着?!</h6>
-
-<h4> 黑客帝国Matrix📟</h4>
-
-<code> 
-apt search matrix<br/>
-apt show cmatrix<br/>
-sudo apt install cmatrix<br/>
-</code>
+<h4 id="我们还能玩点什么呢？🧸">我们还能玩点什么呢？🧸</h4>
+<p>这个实验我们想制作大字符画 (large character)，于是我们在源里面搜索 large character。</p>
+<pre><code class="language-shell hljs"><span class="hljs-meta">#</span><span class="bash"> 注意这里 large 和 character 有空格</span>
+apt search large character</code></pre>
+<checker style="display: none;">[{"name":"检查是否在命令历史中曾经出现过 uname","script":"cat /home/shiyanlou/.zsh_history | grep \"apt search large character\"\n","error":"您还没有查询 large character","timeout":1}]</checker><h4 id="找到两个命令-figlet-和-toilet">找到两个命令 figlet 和 toilet</h4>
+<pre><code class="language-shell hljs"><span class="hljs-meta">#</span><span class="bash"> 从源下载 figlet</span>
+apt search figlet</code></pre>
+<h2 id="figlet-灵魂三问-💡">figlet 灵魂三问 💡</h2>
+<p><strong>让我们来发起“灵魂三问”。</strong> 😉</p>
+<pre><code class="language-shell hljs">whatis figlet
+whereis -b figlet
+which figlet</code></pre>
+<p><img alt="figlet" src="https://labfile.oss.aliyuncs.com/courses/2712/figlet3.png"></p>
+<h4 id="具体用一下这个-figlet">具体用一下这个 figlet</h4>
+<pre><code class="language-shell hljs">figlet oeasy</code></pre>
+<p><strong>我们可以看到 oeasy 做为参数，被放大了，被做成了字符画，做成了签名档。</strong></p>
+<p><img alt="Image text" src="https://labfile.oss.aliyuncs.com/courses/2712/figlet.png"></p>
+<p><strong>还有什么细节吗？我们来查查手册！</strong>📕</p>
+<h3 id="figlet-细节">figlet 细节</h3>
 <ul>
-<li>发现一个叫做cmatrix的软件包</li>
-<li>下载需要2M</li>
-<li>好像可以玩</li>
-<li>走起来</li>
+<li>对齐方式：<ul>
+<li>-l 左</li>
+<li>-c 中</li>
+<li>-r 右</li>
 </ul>
-
-<code> 
-cmatrix
-</code>
-
-<h6> 可以看看手册里的选项细节吗?</h6>
-
-<h5> 矩阵细节📟</h5>
-<ul>
-<li>-b:部分加粗头部变色bold</li>
-<li>-B:全部加粗头部变色Bold</li>
-<li>-o:老式的old school</li>
-<li>-s:屏保模式Screensaver</li>
-<li>-u 0..9:设置中间间隔时间⏲</li>
-<ul>
-<li>0为无间隔非常快</li>
-<li>9为比较慢</li>
+</li>
+<li>改变字体：<ul>
+<li>-f fontfile</li>
+<li>figlet 字体文件 flf 在哪呢？🤔</li>
 </ul>
-<li>-C cyan:颜色(Color)模式</li>
-<ul>
-<li>支持红绿蓝青品黄黑白</li>
+</li>
 </ul>
-</ul>
-<code> 
-cmatrix -b<br/>
-cmatrix -u 9<br/>
-cmatrix -C blue<br/>
-</code>
-<h5> 还有什么?🤨</h5>
-<h6> 黑客矩阵确实很酷,还有什么好玩的吗?</h6>
-<h6>有个水族馆很好玩asciiquarium</h6>
-
-<code> 
-apt show asciiquarium<br/>
-apt sear asciiquarium<br/>
-</code>
-<ul>
-<li>根本搜不到啊,怎么办呢?🤪</li>
-<li>下次再说!👋</li></ul><span id="prevChapter">
-</span>
-<a href="https://github.com/overmind1980/oeasy-linux-tutorial">参与制作</a>  <a href="http://oeasy.org/category/system/linux/shiyan.html">去做实验</a>
-<span id="nextChapter">
-</span>
-
+<pre><code class="language-shell hljs"><span class="hljs-meta">#</span><span class="bash">使用 find 命令在/(root) 下查找所有 flf 文件</span>
+sudo find / -name "*.flf"</code></pre>
+<p><img alt="Image text" src="https://labfile.oss.aliyuncs.com/courses/2712/figlet_font"></p>
+<p>字体 fif 文件都在 figlet 文件夹里，我们可以做各种各样的签名档了！</p>
+<h4 id="banner、签名档一览">banner、签名档一览</h4>
+<p><img alt="Image text" src="https://labfile.oss.aliyuncs.com/courses/2712/show_figlet.png"></p>
+<h3 id="疑问-🤔">疑问 🤔</h3>
+<p>我们突然有了一个疑问，那么大字符可以带有颜色吗？迅速在手册中搜索 <code>/color</code> 一下，没有结果～</p>
+<p>接下来我们我们去另一个大字符工具那里玩一下...</p>
+<p><strong>另一个工具 toilet 到底什么意思？🤔下次再说！👋</strong></p>
+</div>
 
 <div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到微信" class="bshare-weixin"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到QQ书签" class="bshare-qqshuqian"></a><a title="分享到复制网址" class="bshare-clipboard"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/button.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script><a class="bshareDiv" onclick="javascript:return false;"></a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 
