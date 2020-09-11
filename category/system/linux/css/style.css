@@ -7,6 +7,7 @@ html,body{
     float:left;
     width:32%;
     overflow:scroll;
+    position:fixed;
 }
 #content{
     width:65%;
@@ -120,7 +121,7 @@ header a{
     background:#ccc;
     position:absolute;
     top:300px;
-    left:30%;
+    left:32%;
     vertical-align:middle;
     padding-top:40px;
     border:1px solid #333;
