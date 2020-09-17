@@ -142,12 +142,14 @@ function initData(){
     dataList.push({id:'010212',name:'010213中文输入fcitx',type:'function',parentId:"010200"});//默认树
     dataList.push({id:'010213',name:'010214字符画转化asciiview',type:'function',parentId:"010200"});//默认树
     dataList.push({id:'010214',name:'010215随机谚语fortune',type:'function',parentId:"010200"});//默认树
-    dataList.push({id:'010215',name:'010216随机诗词fortune-zh',type:'function',parentId:"010200"});//默认树
+    dataList.push({id:'010215',name:'010216随机诗词fortunezh',type:'function',parentId:"010200"});//默认树
+
     dataList.push({id:'010300',name:'图形应用0103',type:'function',parentId:"010000"});//默认树
     dataList.push({id:'010301',name:'010301桌面宠物pet',type:'function',parentId:"010300"});//默认树
     dataList.push({id:'010302',name:'010302火狐firefox',type:'function',parentId:"010300"});//默认树
     dataList.push({id:'010303',name:'010303文件管理器nautilus',type:'function',parentId:"010300"});//默认树
     dataList.push({id:'010304',name:'010304图形界面xfce',type:'function',parentId:"010300"});//默认树
+
     dataList.push({id:'010400',name:'010400大总结Summary',type:'function',parentId:"010000"});//默认树
 
 
