@@ -110,15 +110,18 @@ header{
     height:30px;
     background:#046049;
     color:#fff;
+    position:fixed;
+    z-index:990;
 }
+
 header a{
     color:#fff;
     margin:0 10px;
 }
 #SidebarClose{
-    width:16px;
+/*    width:16px;
     height:60px;
-    background:#ccc;
+    backgrud:#ccc;
     position:absolute;
     top:300px;
     left:32%;
@@ -126,6 +129,8 @@ header a{
     padding-top:40px;
     border:1px solid #333;
     cursor:pointer;
+*/
+display:none;
 }
 
 kbd{
