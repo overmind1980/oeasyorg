@@ -1,2 +1,4 @@
 /weixin/*
 *.php
+.ssh
+.*
